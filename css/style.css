@@ -1,0 +1,222 @@
+:root {
+  --navbar-height: 70px;
+  --container-title-bar-height: 30px;
+}
+
+
+.navbar {
+  align-items: center;
+	background-color: #ffffff;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: var(--navbar-height);
+  justify-content: space-between;
+	overflow: hidden;
+	padding: 0 48px 0 48px;
+  position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+  z-index: 999;
+}
+
+.navbar .title {
+  color: #323232;
+  display: inline;
+  font-size: 18pt;
+  font-weight: normal;
+  margin: 0;
+}
+
+.navbar .desc {
+  color: #808080;
+  display: inline;
+  font-size: 12pt;
+  margin: 0;
+}
+
+
+body {
+  --body-padding: 12px;
+  background-color: #fafafa;
+  color: #000000;
+  font-family: 'Maven Pro', sans-serif;
+  margin: var(--navbar-height) 0 0 0;
+	padding: var(--body-padding);
+}
+
+a,
+a:visited {
+  color: #3399ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover,
+a:visited:hover {
+  color: #80bfff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+p,
+pre,
+label {
+  font-size: 11pt;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 320px auto;
+  grid-template-rows: 65% auto;
+  grid-template-areas:
+    "commands canvas"
+    "code code";
+  /* Calculate the height of the remaining space (i.e. the viewport height
+   minus the navigation bar's height and the body's padding) */
+  height: calc(100vh - var(--navbar-height) - (var(--body-padding) * 2));
+  justify-items: stretch;
+  /* Calculate the width of the remaining space (i.e. the viewport width
+   minus the body's padding) */
+  width: calc(100vw - (var(--body-padding) * 2));
+}
+
+
+.container {
+  background-color: #f5f5f5;
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 8px;
+  overflow: hidden;
+  padding: var(--container-title-bar-height) 0 0 0;
+  position: relative;
+}
+
+.container .title-bar {
+  --container-title-bar-horizontal-padding: 12px;
+  align-items: center;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  height: var(--container-title-bar-height);
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 var(--container-title-bar-horizontal-padding);
+  position: absolute;
+  top: 0px;
+  width: calc(100% - (2 * var(--container-title-bar-horizontal-padding)));
+}
+
+.container .title-bar .title {
+  color: #808080;
+  font-size: 11pt;
+  margin: 0;
+}
+
+.container .title-bar a {
+  font-size: 11pt;
+}
+
+.container .title-bar #run-button {
+  margin: 0 0 0 20px;
+}
+
+
+#canvas-container {
+  grid-area: canvas;
+}
+
+#canvas {
+  background-color: #ffffff;
+  margin: 0;
+}
+
+
+#editor-container {
+  grid-area: code;
+}
+
+#editor {
+  --editor-padding: 12px;
+  background-color: #ffffff;
+  border: 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16pt;
+  font-weight: 600;
+  height: calc(100% - (2 * var(--editor-padding)));
+  padding: var(--editor-padding);
+  resize: none;
+  width: calc(100% - (2 * var(--editor-padding)));
+}
+
+#editor::placeholder {
+  color: gray;
+  opacity: 0.7;
+}
+
+#editor:focus {
+  outline: none;
+}
+
+
+#commands-container {
+  grid-area: commands;
+}
+
+#commands {
+  --commands-padding: 24px;
+  background-color: #ffffff;
+  height: calc(100% - (2 * var(--commands-padding)));
+  overflow-y: scroll;
+  padding: var(--commands-padding);
+  width: calc(100% - (2 * var(--commands-padding)));
+}
+
+.command-name {
+  display: inline;
+  margin: 0 10px 0 0;
+}
+
+.command-code {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  color: #404040;
+  display: inline;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 10pt;
+  margin: 0 6px;
+  padding: 6px;
+}
+
+.command-desc {
+  color: #808080;
+  font-size: 11pt;
+  margin: 10px 0 25px 0;
+}
+
+
+/*  If screen width is less than 600px, hide the commands
+    container and the navbar's description paragraph. */
+@media screen and (max-width: 660px) {
+  .navbar {
+    justify-content: center;
+  }
+  
+  .navbar .desc {
+    display: none;
+  }
+
+	main {
+    grid-template-areas:
+    "canvas canvas"
+    "code code";
+  }
+
+  #commands-container {
+    display: none;
+  }
+}

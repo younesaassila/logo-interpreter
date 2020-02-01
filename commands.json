@@ -1,0 +1,99 @@
+{
+    "commands": [
+        {
+            "name": "Forward",
+            "code": "fd (number)",
+            "desc": "Moves the turtle forward, in the direction that it's facing, by the specified distance (measured in turtle steps)."
+        },
+        {
+            "name": "Backward",
+            "code": "bd (number)",
+            "desc": "Moves the turtle backward, i.e., exactly opposite to the direction that it's facing, by the specified distance (measured in turtle steps)."
+        },
+        {
+            "name": "Left",
+            "code": "lt (number)",
+            "desc": "Turns the turtle counterclockwise by the specified angle, measured in degrees."
+        },
+        {
+            "name": "Right",
+            "code": "rt (number)",
+            "desc": "Turns the turtle clockwise by the specified angle, measured in degrees."
+        },
+        {
+            "name": "Comment",
+            "code": "/* (text) */",
+            "desc": "Delimits a portion of text that will be ignored during the code's execution. This may be useful to include an explanation about what a part of the code does or to temporarily disable a chunk of code."
+        },
+        {
+            "name": "Color",
+            "code": "color (color)",
+            "desc": "Sets the turtle's pen color to the one specified (expects a CSS color)."
+        },
+        {
+            "name": "Background Color",
+            "code": "bgcolor (color)",
+            "desc": "Sets the background color to the one specified (expects a CSS color)."
+        },
+        {
+            "name": "Show Turtle",
+            "code": "st",
+            "desc": "Makes the turtle visible on screen."
+        },
+        {
+            "name": "Hide Turtle",
+            "code": "ht",
+            "desc": "Makes the turtle invisible on screen."
+        },
+        {
+            "name": "Pen Up",
+            "code": "pu",
+            "desc": "Sets the pen's position to UP, meaning it will no longer draw any lines."
+        },
+        {
+            "name": "Pen Down",
+            "code": "pd",
+            "desc": "Sets the pen's position to DOWN, meaning it will draw lines when the turtle changes position."
+        },
+        {
+            "name": "Pen Size",
+            "code": "ps (number)",
+            "desc": "Sets the turtle's pen size to the specified number. This number has to be higher or equal to 1."
+        },
+        {
+            "name": "Repeat",
+            "code": "repeat (number) [ instruction list ]",
+            "desc": "Repeats a certain instruction list (number) times. (Can be nested)"
+        },
+        {
+            "name": "Home",
+            "code": "home",
+            "desc": "Moves the turtle back to the center of the screen."
+        },
+        {
+            "name": "Set X",
+            "code": "setx (number)",
+            "desc": "Sets the X coordinate of the turtle to the one specified."
+        },
+        {
+            "name": "Set Y",
+            "code": "sety (number)",
+            "desc": "Sets the Y coordinate of the turtle to the one specified."
+        },
+        {
+            "name": "Set X Y",
+            "code": "setxy (number) (number)",
+            "desc": "Sets the coordinates of the turtle to the ones specified."
+        },
+        {
+            "name": "Set Heading",
+            "code": "seth (number)",
+            "desc": "Sets the heading of the turtle to the angle specified, measured in degrees."
+        },
+        {
+            "name": "Clear Screen",
+            "code": "cs",
+            "desc": "Clears the entire screen and resets the turtle's values."
+        }
+    ]
+}
