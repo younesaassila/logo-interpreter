@@ -144,9 +144,9 @@ main {
   --editor-padding: 12px;
   background-color: #ffffff;
   border: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Cascadia Mono', 'Courier New', Courier, monospace;
   font-size: 16pt;
-  font-weight: 600;
+  font-weight: normal;
   height: calc(100% - (2 * var(--editor-padding)));
   padding: var(--editor-padding);
   resize: none;
